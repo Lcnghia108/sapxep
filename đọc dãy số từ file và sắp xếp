@@ -64,9 +64,9 @@ void Bubble_sort(int n, int x[])
 int main()
 {
 	int Myarr[MAX];int dai;
-	fi= fopen("D:\\bai1 input.txt", "rt");// mở file input
+	fi= fopen("D:\\bai1 input.txt", "rt"); // mở file input
 	if (fi==NULL) cout << "Khong mo duoc file";
-	else
+	else //đọc dữ liệu từ file vào mảng
 	{
 		int dem=0;
 		while (!feof(fi))
@@ -75,14 +75,13 @@ int main()
 			dem++;
 		}
 		 dai=dem;
-	}
-	printf("%d", dai);
-	fclose(fi);//đóng file input
-	//Selection_sort(dai, Myarr[]);
+	}//em thấy hàm else này có vấn đề
+	fclose(fi); //đóng file input
+	Selection_sort(dai, Myarr[]);
 	fo= fopen("D:\\bai1 ouput.txt", "wt");
 	if (fo==NULL) cout << "Khong mo duoc file";
 	for (int dem2=0;dem2<dai-1; dem2++)
-		fprintf(fo, "%d  ", Myarr[dem2]);
+		fprintf(fo, "%d  ", Myarr[dem2]); //ghi file đã sắp xếp vào mảng
 	fclose(fo);//đóng file output
 	getch();
 	return 0;
