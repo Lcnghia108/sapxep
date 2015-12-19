@@ -1,0 +1,13 @@
+int dai; //khai báo biến độ dài của mảng
+fi= fopen("D:\\bai1 input.txt", "rt");// mở file input
+	if (fi==NULL) cout << "Khong mo duoc file";
+	else
+	{
+		int dem=0;
+		while (!feof(fi))
+		{
+			fscanf(fi,"%d", &Myarr[dem]);
+			dem++;
+		}
+		 dai=dem;
+	}
